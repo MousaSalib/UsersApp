@@ -1,0 +1,11 @@
+<div class="card"  *ngIf="isEmailMatching()" [ngClass]="{'border-red': isBorderRed}">
+
+  <img [src]="dataUsers.image" class="card-img-top center-image" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">{{dataUsers.username}} <i class="fa-solid fa-star" [ngClass]="{'text-success': dataUsers.is_verified == true , 'text-danger': dataUsers.is_verified != true}"></i></h4>
+    <h5 class="card-text">Email: {{dataUsers.email}}</h5>
+    <h6 class="card-text">Phone: {{dataUsers.phone}}</h6>
+    <h6 class="card-text">BirthDate: {{dataUsers.birthDate | date}}</h6>
+    <button (click)="handleClick()">ShowUserName</button>
+  </div>
+</div>
